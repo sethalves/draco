@@ -268,8 +268,8 @@ $(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)):: binary-install/%:
 		$(if $(DEB_DH_INSTALL_SOURCEDIR),\
 			--sourcedir=$(DEB_DH_INSTALL_SOURCEDIR)) \
 		$(call cdbs_expand_curvar,DEB_DH_INSTALL_ARGS))
-	$(if $(wildcard /usr/bin/dh_systemd_start),\
-		dh_systemd_start -p$(cdbs_curpkg) $(call cdbs_expand_curvar,DEB_DH_SYSTEMD_START_ARGS))
+	# $(if $(wildcard /usr/bin/dh_systemd_start),\
+	# 	dh_systemd_start -p$(cdbs_curpkg) $(call cdbs_expand_curvar,DEB_DH_SYSTEMD_START_ARGS))
 # TODO: Use DEB_DH_LINK_ARGS as package-default var (not global addon)
 	dh_link -p$(cdbs_curpkg) $(strip \
 		$(DEB_DH_LINK_ARGS) \
