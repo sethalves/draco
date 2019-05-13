@@ -1,4 +1,8 @@
 #!/usr/bin/make -f
 
+VERBOSE=1
+SHOW_RULES=1
+
 # include /usr/share/cdbs/1/rules/debhelper.mk
+include debhelper.mk
 include /usr/share/cdbs/1/class/cmake.mk
