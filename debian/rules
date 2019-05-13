@@ -1,8 +1,8 @@
 #!/usr/bin/make -f
 
-VERBOSE=1
-SHOW_RULES=1
-
 # include /usr/share/cdbs/1/rules/debhelper.mk
+# when compat >= 11 we can't use dh_systemd_enable or dh_systemd_start, which debhelper.mk does.  The checked-in
+# version is hacked to work around this.
 include debhelper.mk
+
 include /usr/share/cdbs/1/class/cmake.mk
